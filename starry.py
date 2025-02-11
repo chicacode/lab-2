@@ -74,31 +74,34 @@ def print_pattern3(n):
 # pattern 4
 def print_pattern4(n):
     # inverted pyramid
-    if n % 2 == 0:
-        n -= 1  # Ensure `n` is odd for symmetry
-
-        # inverted pyramid
-    for i in range(n, 0, -2):
-        spaces = (n - i) // 2
-        for _ in range(spaces):
-            print(" ", end="")
-        for _ in range(i):
-            # Print stars
-            print("*", end="")
+    i = 0
+    while i <= n - 1:
+        j = 0
+        while j < i:
+            # display space
+            print('', end=' ')
+            j += 1
+        k = i
+        while k <= n - 1:
+            print('*', end=' ')
+            k += 1
         print()
+        i += 1
 
-        # Bottom half (pyramid)
-    for i in range(3, n + 1, 2):
-        spaces = (n - i) // 2
-        for _ in range(spaces):
-            print(" ", end="")
-        for _ in range(i):
-            # Print stars
-            print("*", end="")
-        print()  #
-
-#rows = int(input("Enter the number of rows - patterns 4: "))
-#print_pattern4(rows)
+    i = n - 2
+    while i >= 0:
+        j = 0
+        while j < i:
+            print('', end=' ')
+            j += 1
+        k = i
+        while k <= n - 1:
+            print('*', end=' ')
+            k += 1
+        print('')
+        i -= 1
+rows = int(input("Enter the number of rows - patterns 4: "))
+print_pattern4(rows)
 
 # pattern 5
 
