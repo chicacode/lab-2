@@ -62,13 +62,12 @@ def print_pattern3(n):
             print("*", end='')
         print()
     for i in range(n, 0, -1):
-        count = "*"
         for j in range(0, i - 1):
-            print(count, end='')
-        print('\r')
+            print("*", end='')
+        print()
 
-#rows = int(input("Enter the number of rows: "))
-#print_pattern3(rows)
+rows = int(input("Enter the number of rows: "))
+print_pattern3(rows)
 
 # pattern 4
 def print_pattern4(n):
@@ -90,8 +89,8 @@ def print_pattern4(n):
 
 
 
-rows = int(input("Enter the number of rows: "))
-print_pattern4(rows)
+#rows = int(input("Enter the number of rows: "))
+#print_pattern4(rows)
 
 # pattern 5
 
