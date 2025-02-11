@@ -40,8 +40,8 @@ def print_pattern1(n):
             print("*", end="")
         print()
 
-rows = int(input("Enter the number of rows for patter 1: "))
-print_pattern1(rows)
+#rows = int(input("Enter the number of rows for pattern 1: "))
+#print_pattern1(rows)
 
 # pattern 2
 def print_pattern2(n):
@@ -53,8 +53,8 @@ def print_pattern2(n):
         print()
 
 
-rows = int(input("Enter the number of rows: "))
-print_pattern2(rows)
+#rows = int(input("Enter the number of rows pattern 2: "))
+#print_pattern2(rows)
 
 # pattern 3
 
@@ -68,30 +68,36 @@ def print_pattern3(n):
             print("*", end='')
         print()
 
-rows = int(input("Enter the number of rows: "))
-print_pattern3(rows)
+#rows = int(input("Enter the number of rows - pattern 3: "))
+#print_pattern3(rows)
 
 # pattern 4
 def print_pattern4(n):
-    # Print piramid inverted
-    for i in range(n, 0, -1):
-        # Spaces increase as rows decrease
-        spaces = ' ' * (n - i)
-        # print starts
-        stars = '*' * (2 * i - 1)
-        print(spaces + stars)
-        # Print good Piramid
-    for i in range(1, n):
-        # Creates spaces to center the stars
-        #print("I", i)
-        spaces = ' ' * (n - i - 1)
-        # Print starts the pyramid pattern
-        stars = '*' * (2 * i + 1)
-        print(spaces + stars)
+    # inverted pyramid
+    if n % 2 == 0:
+        n -= 1  # Ensure `n` is odd for symmetry
 
+        # inverted pyramid
+    for i in range(n, 0, -2):
+        spaces = (n - i) // 2
+        for _ in range(spaces):
+            print(" ", end="")
+        for _ in range(i):
+            # Print stars
+            print("*", end="")
+        print()
 
+        # Bottom half (pyramid)
+    for i in range(3, n + 1, 2):
+        spaces = (n - i) // 2
+        for _ in range(spaces):
+            print(" ", end="")
+        for _ in range(i):
+            # Print stars
+            print("*", end="")
+        print()  #
 
-#rows = int(input("Enter the number of rows: "))
+#rows = int(input("Enter the number of rows - patterns 4: "))
 #print_pattern4(rows)
 
 # pattern 5
