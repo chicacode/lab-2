@@ -32,27 +32,29 @@ for i in range(1, n + 1):
 def print_pattern1(n):
     # Print piramid
     for i in range(n):
-        spaces = ' ' * (n - i - 1)  # Creates spaces to center the stars
-        stars = '*' * (2 * i + 1)  # Creates the pyramid pattern
-        print(spaces + stars)
+        # print space
+        for _ in range(n - i - 1):
+           print(" ", end="")
+           # print piramid
+        for i in range(2 * i + 1):
+            print("*", end="")
+        print()
 
-
-#rows = int(input("Enter the number of rows: "))
-#print_pattern1(rows)
+rows = int(input("Enter the number of rows for patter 1: "))
+print_pattern1(rows)
 
 # pattern 2
 def print_pattern2(n):
     print(n)
     """ One inverted triangle """
     for i in range(n, 0, -1):
-        count = "*"  # Create the star
         for j in range(i):
-            print(count, end='')  # Add space
-        print('\r')
+            print( "*", end='')  # Add space
+        print()
 
 
-#rows = int(input("Enter the number of rows: "))
-#print_pattern2(rows)
+rows = int(input("Enter the number of rows: "))
+print_pattern2(rows)
 
 # pattern 3
 
