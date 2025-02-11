@@ -106,19 +106,20 @@ def print_pattern4(n):
 # pattern 5
 
 def print_pattern5(n):
-        for i in range(n):
-            # Creates spaces to center the stars
-            #print("I", i)
-            spaces = ' ' * (n - i - 1)
-            # Print starts the pyramid pattern
-            stars = '*' * (2 * i + 1)
-            print(spaces + stars)
-            # Start from n and decrease to 1
-        for i in range(n - 1, 0, -1):
-            # Spaces increase as rows decrease
-            spaces = ' ' * (n - i)
-            # print starts
-            stars = '*' * (2 * i - 1)
-            print(spaces + stars)
+    for i in range(n):
+        # Creates spaces to center the stars
+        #print("I", i)
+        spaces = ' ' * (n - i - 1)
+        # Print starts the pyramid pattern
+        stars = '*' * (2 * i + 1)
+        print(spaces + stars)
+
+    for i in range(n - 1, 0, -1):
+        # Spaces increase as rows decrease
+        spaces = ' ' * (n - i)
+        # print starts
+        stars = '*' * (2 * i - 1)
+        print(spaces + stars)
+
 rows = int(input("Enter the number of rows pattern 5: "))
 print_pattern5(rows)
