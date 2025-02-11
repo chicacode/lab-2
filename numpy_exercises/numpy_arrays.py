@@ -78,8 +78,24 @@ arr_2_broadcasting = np.random.randint(1,6,size=(3,4))
 print("2nd Array: ", arr_2_broadcasting)
 result_broadcasting = arr_2_broadcasting + arr_1_broadcasting
 print("Result broadcasting: ", result_broadcasting)
-# Task 9 Filtering an Array
 
+# Task 9 Filtering an Array
+random_array_20 = np.random.randint(1, 101, size=20)
+print("Random Arr 20: ", random_array_20)
+
+print("Elements greater than 50: ", random_array_20[random_array_20 > 50])
+
+random_array_20[random_array_20 < 30] = -1
+print("Replaced values: ", random_array_20)
 
 # Task 10 Reshaping Array
+array_1d_12 = np.random.randint(1, 51, size=12)
+print("Array 12 elements: ", array_1d_12)
 
+array_2d_reshaped = array_1d_12.reshape(3, 4)
+
+print("Array reshaped: ", array_2d_reshaped)
+
+array_transposed = array_2d_reshaped.transpose()
+
+print("Array transposed: ", array_transposed)
