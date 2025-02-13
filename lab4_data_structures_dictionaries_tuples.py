@@ -329,3 +329,93 @@ print("Updated cart: ")
 for item in cart:
     print(f" Item: {item['item']}, Quantity: {item['quantity']}, Price per Unit; ${item['price_per_unit']}")
 print('\n')
+
+# Exercise 9: Weather Data
+weather = {
+"Monday": {"temperature": 20, "humidity": 60},
+"Tuesday": {"temperature": 22, "humidity": 55},
+"Wednesday": {"temperature": 19, "humidity": 65},
+"Thursday": {"temperature": 23, "humidity": 50},
+"Friday": {"temperature": 21, "humidity": 70}
+}
+# 9.1. Print the weather details for each da
+print("Daily Weather")
+for day, data in weather.items():
+    print(f" Day: {day}, Temperature: {data['temperature']}, Humidity:  {data['humidity']}")
+print('\n')
+# 9.2. Find and print the day with the highest temperature
+highest_temperature = max(weather, key=lambda day: weather[day]['temperature'])
+print(f"The hottest day is {highest_temperature} with {weather[highest_temperature]['temperature']}C")
+print('\n')
+# 9.3. Find and print the day with the lowest humidity
+lowest_humidity = min(weather, key=lambda day: weather[day]['humidity'])
+print(f"The day with lowest humidity is {lowest_humidity} with {weather[lowest_humidity]['humidity']} humidity")
+print('\n')
+# 9.4. Update the temperature of "Wednesday" to 25 and print the updated weather
+# data.
+weather['Wednesday']['temperature'] = 25
+print("Updated Wednesday's temperature to 25")
+for day, data in weather.items():
+    print(f" Day: {day}, Temperature: {data['temperature']}, Humidity:  {data['humidity']}")
+print('\n')
+# 9.5. Add weather data for "Saturday" with temperature 24 and humidity 60 to the
+# dictionary and print the updated weather data.
+weather['Saturday'] = {
+    'temperature': 24, 'humidity': 60
+}
+print("Added weather data for Saturday")
+print("Updated Data Weather")
+
+for day, data in weather.items():
+    print(f" Day: {day}, Temperature: {data['temperature']}, Humidity:  {data['humidity']}")
+print('\n')
+
+# Exercise 10: Library Members
+members = [
+    {"name": "Alice", "age": 25, "books_borrowed": ["1984", "To Kill a Mockingbird"]},
+    {"name": "Bob", "age": 30, "books_borrowed": ["The Catcher in the Rye"]},
+    {"name": "Charlie", "age": 22, "books_borrowed": ["Brave New World", "1984"]},
+    {"name": "David", "age": 35, "books_borrowed": ["The Great Gatsby"]}
+]
+
+# 10.1 Print the names and ages of all members.
+print("Library members: ")
+for member in members:
+    print(f"Name: {member['name']}, Age: {member['age']}")
+print('\n')
+# 10.2 Find and print the books borrowed by "Charlie".
+charlie_book = next((member['books_borrowed'] for member in members if member['name'] == "Charlie"), None)
+if charlie_book:
+    print(f"Charlie has borrowed: {', '.join(charlie_book)}")
+else:
+    print("Charlie's book not found")
+print('\n')
+# 10.3 Add a new member "Eve" with age 28 and books borrowed ["Pride a
+# Prejudice"] to the list.
+
+members.append({
+    'name': 'Eve',
+    'age': 28,
+    'books_borrowed':["Pride and Prejudice"]
+})
+print("New member added: 'Eve'.")
+for member in members:
+    print(f"Name: {member['name']}, Age: {member['age']}, Books Borrowed: {', '.join(member['books_borrowed'])}")
+print('\n')
+# 10.4 Update the age of "Bob" to 31 and print the updated list.
+for member in members:
+    if member['name'] == "Bob":
+        member['age'] = 31
+        break
+print('Updated Bob age')
+for member in members:
+    print(f"Name: {member['name']}, Age: {member['age']}, Books Borrowed: {', '.join(member['books_borrowed'])}")
+print('\n')
+# 10.5 Remove "David" from the list and print the updated list
+members = [member for member in members if member['name'] != "David"]
+print("Removed 'Davide' from the members list")
+
+print('Updated Members Library')
+for member in members:
+    print(f"Name: {member['name']}, Age: {member['age']}, Books Borrowed: {', '.join(member['books_borrowed'])}")
+print('\n')
