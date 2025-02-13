@@ -89,7 +89,7 @@ print("Employees Name and Departments:")
 for name, department, _ in employees:
     print(f"{name} - {department}")
 
-
+print("\n")
 # 3.2 Print the email addresses of all employees in alphabetical order by their last names.
 sorted_emails = sorted(employees, key=lambda items: items[0].split()[-1])
 for _, _, email in sorted_emails:
@@ -101,7 +101,7 @@ print("Updated Employees Record: ")
 for name, department, email in employees:
     print(f"{name} - {department} - {email}")
 
-
+print("\n")
 # Find and print the department of "Jane Smith".
 jane_department = next((dept for name, dept, _ in employees if name == "Jane Smith"), 'Not Found')
 print(f"Jane's Smith department: {jane_department}")
@@ -197,3 +197,135 @@ print("New city added: San Francisco")
 print("\nUpdated City Population Data:")
 for city, population in cities.items():
     print(f"{city}: {population} people")
+print("\n")
+# Exercise 6: Movie Database
+movies = {
+"Inception": {"year": 2010, "rating": 8.8, "genre": "Sci-Fi"},
+"The Godfather": {"year": 1972, "rating": 9.2, "genre": "Crime"},
+"The Dark Knight": {"year": 2008, "rating": 9.0, "genre": "Action"},
+"Pulp Fiction": {"year": 1994, "rating": 8.9, "genre": "Crime"},
+"Forrest Gump": {"year": 1994, "rating": 8.8, "genre": "Drama"}
+}
+
+# 6.2 Print the details of all movies in a user-friendly format
+print("Movies Details:")
+for title, details in movies.items():
+    print(f"Title: {title}")
+    print(f"Year: {details['year']}")
+    print(f"Rating: {details['genre']}")
+    print(f"Genre: {details['genre']}")
+    print("-")
+
+# 6.3 Find and print the highest-rated movie
+top_rated_movie = max(movies, key=lambda movie: movies[movie]['rating'])
+print(f"Highest rated movie: {top_rated_movie} ({movies[top_rated_movie]['rating']}")
+
+# 6.4 Add a new movie "The Matrix" with year 1999, rating 8.7, and genre "Sci-Fi"
+# the database.
+movies['The Matrix'] = {
+    'year': 1999,
+    'rating': 8.7,
+    'genre': 'Sci-Fi'
+}
+print(f"Added new movie, my favorite: The Matrix")
+
+# 6.5 Update the rating of "Inception" to 9.0 and print the updated details
+movies['Inception']['rating'] = 9.0
+print("Updating rating")
+print(f"Title: Inception, Year: {movies['Inception']['year']}, Rating: {movies['Inception']['rating']}, Genre: {movies['Inception']['genre']}, ")
+print("\n")
+# Remove "Pulp Fiction" from the database and print the updated list
+if 'Pulp Fiction' in movies:
+    del movies['Pulp Fiction']
+    print(f"Removed 'Pulp Fiction' from dictionary")
+
+print('\n')
+for title, details in movies.items():
+    print(f"Title: {title}, Year: {details['year']}, Rating: {details['rating']}, Genre: {details['genre']}")
+print('\n')
+
+# Exercise 7: Country Capitals
+
+countries = {
+"USA": "Washington, D.C.",
+"Canada": "Ottawa",
+"France": "Paris",
+"Germany": "Berlin",
+"Japan": "Tokyo"
+}
+
+# 7.1 Print the names of all countries and their capitals
+print("Print countries and capitals")
+for country, capital in countries.items():
+    print(f" {country}: {capital}")
+print('\n')
+# 7.2 Find and print the capital of Germany
+germany_capital = countries.get("Germany", "Not found")
+print(f" Capital of Germany: {germany_capital}")
+print('\n')
+
+# 7.3 Add a new country "Australia" with capital "Canberra" to the dictionary a
+# print the updated dictionary.
+countries['Australia'] = 'Canberra'
+print("Updated Dictionary")
+for country, capital in countries.items():
+    print(f" {country}: {capital}")
+print('\n')
+
+# 7.4 Update the capital of "USA" to "New Washington" and print the update
+# dictionary.
+countries['USA'] = "New Washington"
+print("Updated Dictionary: USA capital")
+
+for country, capital in countries.items():
+    print(f" {country}: {capital}")
+print('\n')
+
+# 7.5 Remove "France" from the dictionary and print the updated dictionary
+
+if "France" in countries:
+    del countries["France"]
+    print("Removed France from the dictionary.")
+print('\n')
+# Exercise 8: Shopping Cart
+
+cart = [
+{"item": "apple", "quantity": 3, "price_per_unit": 0.5},
+{"item": "banana", "quantity": 6, "price_per_unit": 0.2},
+{"item": "orange", "quantity": 4, "price_per_unit": 0.3},
+{"item": "pear", "quantity": 2, "price_per_unit": 0.4}
+]
+# 8.1 Print the details of all items in the cart
+print("Shopping cart details:")
+for item in cart:
+    print(f" Item: {item['item']}, Quantity: {item['quantity']}, Price per Unit; ${item['price_per_unit']}")
+
+# 8.2 Calculate and print the total cost of the cart
+total = sum(item['quantity'] * item['price_per_unit'] for item in cart)
+print(f"Total cost of the cart: ${total:.2f}")
+print('\n')
+# 8.3 Add a new item "grape" with quantity 5 and price per unit 0.6 to the cart
+
+cart.append({"item": "grape", "quantity": 5, "price_per_unit": 0.6})
+print("Added 'Grape' into the car")
+for item in cart:
+    print(f" Item: {item['item']}, Quantity: {item['quantity']}, Price per Unit; ${item['price_per_unit']}")
+print('\n')
+# 8.4 Update the quantity of "banana" to 10 and print the updated cart
+for item in cart:
+    if item['item'] == 'banana':
+        item['quantity'] = 10
+        break
+print("Added 'Banana' quantity in the car")
+print('\n')
+for item in cart:
+    print(f" Item: {item['item']}, Quantity: {item['quantity']}, Price per Unit; ${item['price_per_unit']}")
+print('\n')
+
+# 8.5 Remove "pear" from the cart and print the updated cart
+cart = [item for item in cart if item["item"] != "pear"]
+print("Removed 'pear from cart")
+print("Updated cart: ")
+for item in cart:
+    print(f" Item: {item['item']}, Quantity: {item['quantity']}, Price per Unit; ${item['price_per_unit']}")
+print('\n')
