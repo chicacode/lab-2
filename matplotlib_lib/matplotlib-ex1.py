@@ -45,3 +45,5 @@ plt.xlabel('Value')
 plt.ylabel('Frequency')
 plt.title('Histogram Example')
 plt.show()
+
+# Exercise 5: Scatter Plot
