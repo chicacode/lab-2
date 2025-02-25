@@ -78,6 +78,23 @@ plt.title("Average Grade per Subject")
 plt.show()
 
 # 4.2 Create a bar plot showing the total grades of each student.
+sns.barplot(x=data['Name'], y=data['Total_Grades'])
+plt.xticks(rotation=45)
+plt.title("Total Grades per Student")
+plt.show()
+
 # 4.3 Create a histogram showing the distribution of Math scores.
+sns.histplot(data['Math'], bins=10, kde=True)
+plt.title("Distribution of Math Scores")
+plt.show()
+
 # 4.4 Create a box plot to show the distribution of grades for each subject.
+
+sns.boxplot(data=data.iloc[:, 3:-1])
+plt.title("Grade Distribution for Each Subject")
+plt.show()
+
 # 4.5 Create a scatter plot showing the relationship between Math and Science scores.
+sns.scatterplot(x=data['Math'], y=data['Science'])
+plt.title("Math vs Science Scores")
+plt.show()
