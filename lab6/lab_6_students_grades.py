@@ -148,6 +148,23 @@ print(employees[['Name', 'Salary']])
 print(employees.groupby('Department')['Salary'].mean())
 
 # 3. Aggregation and Grouping:
+# 3.1 Calculate the average salary of all employees.
+print('Average salary of all employees')
+print(employees['Salary'].mean())
 
+# 3.2 Calculate the average age of employees in each department.
 
+print('Average age of all employees')
+print(employees['Age'].mean())
+
+# 3.3 Calculate the total years worked at the company for all employees.
+print('Total years at the company')
+print(employees['YearsAtCompany'].sum())
+
+# 3.4 Find the employee with the highest salary.
+print('Employee with the highest salary')
+print(employees.sort_values(by='Salary', ascending=False).head(1))
+# 3.5 Calculate the average years at the company for each department.
+print('Average years at the company for each department')
+print(employees.groupby('Department')['YearsAtCompany'].mean())
 # 4. Data Visualization:
