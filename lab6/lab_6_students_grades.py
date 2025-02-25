@@ -167,4 +167,32 @@ print(employees.sort_values(by='Salary', ascending=False).head(1))
 # 3.5 Calculate the average years at the company for each department.
 print('Average years at the company for each department')
 print(employees.groupby('Department')['YearsAtCompany'].mean())
+
 # 4. Data Visualization:
+
+# 4.1 Create a bar plot showing the average salary for each department.
+department_avg_salary = employees.groupby('Department')['Salary'].mean().reset_index()
+sns.barplot(x='Department', y='Salary', data=department_avg_salary, color='orange')
+plt.title("Average Salary per Department")
+plt.show()
+
+# 4.2 Create a bar plot showing the total years at the company for each employee.
+sns.barplot(x=employees['Name'], y=employees['YearsAtCompany'],  color='orange')
+plt.xticks(rotation=45)
+plt.title("Total Years at Company per Employee")
+plt.show()
+
+# 4.3 Create a histogram showing the distribution of employee ages.
+sns.histplot(employees['Age'], bins=10, kde=True,  color='orange')
+plt.title("Distribution of Employee Ages")
+plt.show()
+
+# 4.4 Create a box plot to show the distribution of salaries for each department.
+sns.boxplot(x=employees['Department'], y=employees['Salary'],  color='orange')
+plt.title("Salary Distribution per Department")
+plt.show()
+
+# 4.5 Create a scatter plot showing the relationship between age and salary.
+sns.scatterplot(x=employees['Age'], y=employees['Salary'],  color='orange')
+plt.title("Age vs Salary")
+plt.show()
