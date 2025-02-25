@@ -11,12 +11,15 @@ import seaborn as sns
 
 # 1.1 Load the dataset into a Pandas DataFrame.
 data = pd.read_csv('student_grades.csv')
+print('Students')
 print(data)
 
 # 1.2 Display the first 5 rows of the DataFrame.
+print('first 5 rows of the DataFrame')
 print(data.head())
 
 # 1.3 Display the summary statistics of the DataFrame.
+print('Statistics of the dataframe')
 print(data.describe())
 
 # 1.4 Display the column names of the DataFrame.
@@ -98,3 +101,53 @@ plt.show()
 sns.scatterplot(x=data['Math'], y=data['Science'])
 plt.title("Math vs Science Scores")
 plt.show()
+
+# Questions for Dataset 2:
+
+# 1.1 Load the dataset into a Pandas DataFrame.
+employees = pd.read_csv('employee_data.csv')
+print('Employees')
+print(employees)
+
+# 1.2 Display the first 5 rows of the DataFrame.
+print('first 5 rows of the DataFrame')
+print(employees.head())
+
+# 1.3 Display the summary statistics of the DataFrame.
+print('summary statistics of the DataFrame')
+print(employees.describe())
+
+department_stats = employees.groupby('Department')[['Salary', 'YearsAtCompany']].mean()
+print(department_stats)
+# 1.4 Display the column names of the DataFrame.
+print('Column names')
+print(employees.columns)
+
+# 1.5 Count the number of employees in each department.
+print('Number of employees')
+print(employees['Department'].value_counts())
+
+# 2. Filtering and Subsetting:
+# 2.1 Filter the DataFrame to show only employees who are older than 40.
+print('employees who are older than 40')
+print(employees[employees['Age'] > 40])
+
+# 2.2 Filter the DataFrame to show only employees in the 'IT' department.
+print('employees in the IT department')
+print(employees[employees['Department'] == 'IT'])
+
+# 2.3 Filter the DataFrame to show employees with a salary above 75000.
+print('employees with a salary above 75000')
+print(employees[employees['Salary'] > 75000])
+
+# 2.4 Select the Name and Salary columns for all employees.
+print('Name and Salary columns for all employees')
+print(employees[['Name', 'Salary']])
+
+# 2.5 Calculate the average salary for each department.
+print(employees.groupby('Department')['Salary'].mean())
+
+# 3. Aggregation and Grouping:
+
+
+# 4. Data Visualization:
