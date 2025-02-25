@@ -72,6 +72,11 @@ print(data['Age'].mean())
 # 4. Data Visualization:
 
 # 4.1 Create a bar plot showing the average grade for each subject.
+subject_means = data[['Math', 'Science', 'English', 'History', 'Physical_Education']].mean()
+sns.barplot(x=subject_means.index, y=subject_means.values)
+plt.title("Average Grade per Subject")
+plt.show()
+
 # 4.2 Create a bar plot showing the total grades of each student.
 # 4.3 Create a histogram showing the distribution of Math scores.
 # 4.4 Create a box plot to show the distribution of grades for each subject.
