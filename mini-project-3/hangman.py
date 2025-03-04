@@ -1,19 +1,38 @@
 import random
 from functions.word_selection import choose_word
 from functions.display import display_word
-from functions.input_handler import get_guess
+from functions.get_guess import get_guess
+
+def get_difficulty():
+    """
+    Prompts the player to select a difficulty level.
+    """
+    difficulty_levels = {
+        # Longer words, more attempts
+        "easy": (8, 8),
+        # Balanced difficulty
+        "medium": (6, 6),
+        # Shorter words, fewer attempts
+        "hard": (4, 4)
+    }
+
+    while True:
+        choice = input("\nChoose difficulty (easy, medium, hard): ").lower()
+        if choice in difficulty_levels:
+            return difficulty_levels[choice]
+        print("Invalid choice. Please select easy, medium, or hard.")
 
 
 def hangman():
     """
-    Runs the Hangman game loop.
+    Run the Hangman game loop.
     """
-    word = choose_word()
-    guessed_letters = set()
-    incorrect_guesses = 0
-    max_attempts = 6
 
     print("Welcome to Hangman!")
+    word_length, max_attempts = get_difficulty()
+    word = choose_word(word_length)
+    guessed_letters = set()
+    incorrect_guesses = 0
 
     while incorrect_guesses < max_attempts:
         print("\nCurrent word:", display_word(word, guessed_letters))
