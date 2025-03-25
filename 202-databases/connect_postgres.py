@@ -1,5 +1,4 @@
 import psycopg2
-import csv
 
 # Connect to PostgreSQL
 conn = psycopg2.connect(
