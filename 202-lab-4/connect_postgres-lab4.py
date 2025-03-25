@@ -1,3 +1,7 @@
+# LAB 4
+# Geraldine Hernandez
+# CICCC
+
 import psycopg2
 
 # Connect to PostgreSQL
